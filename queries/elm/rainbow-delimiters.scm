@@ -1,63 +1,63 @@
 (exposing_list
-  "(" @opening
-  ")" @closing) @container
+  "(" @delimiter
+  ")" @delimiter @sentinel) @container
 
 (exposed_operator
-  "(" @opening
-  ")" @closing) @container
+  "(" @delimiter
+  ")" @delimiter @sentinel) @container
 
 (exposed_union_constructors
-  "(" @opening
-  ")" @closing) @container
+  "(" @delimiter
+  ")" @delimiter @sentinel) @container
 
-("(" @opening
-  .
-  (type_expression) @container
-  .
-")" @closing)
+(type_ref
+  "(" @delimiter
+  (type_expression)
+  ")" @delimiter @sentinel) @container
 
-("(" @opening
-  .
-  [ 
-    (pattern)
-    (union_pattern)
-  ] @container
-  .
-")" @closing)
+;; This does not work because the container does not contain the two
+;; delimiters.  I don't know how to make it work.
+; ("(" @delimiter
+;   .
+;   [ 
+;     (pattern)
+;     (union_pattern)
+;   ] @container
+;   .
+; ")" @delimiter @sentinel)
 
 (record_expr
-  "{" @opening
-  "}" @closing) @container
+  "{" @delimiter
+  "}" @delimiter @sentinel) @container
 
 (record_type
-  "{" @opening
-  "}" @closing) @container
+  "{" @delimiter
+  "}" @delimiter @sentinel) @container
 
 (record_pattern
-  "{" @opening
-  "}" @closing) @container
+  "{" @delimiter
+  "}" @delimiter @sentinel) @container
 
 (tuple_expr
-  "(" @opening
-  ")" @closing) @container
+  "(" @delimiter
+  ")" @delimiter @sentinel) @container
 
 (tuple_type
-  "(" @opening
-  ")" @closing) @container
+  "(" @delimiter
+  ")" @delimiter @sentinel) @container
 
 (tuple_pattern
-  "(" @opening
-  ")" @closing) @container
+  "(" @delimiter
+  ")" @delimiter @sentinel) @container
 
 (parenthesized_expr
-  "(" @opening
-  ")" @closing) @container
+  "(" @delimiter
+  ")" @delimiter @sentinel) @container
 
 (list_expr
-  "[" @opening
-  "]" @closing) @container
+  "[" @delimiter
+  "]" @delimiter @sentinel) @container
 
 (list_pattern
-  "[" @opening
-  "]" @closing) @container
-
+  "[" @delimiter
+  "]" @delimiter @sentinel) @container
