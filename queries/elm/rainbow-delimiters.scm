@@ -15,16 +15,13 @@
   (type_expression)
   ")" @delimiter @sentinel) @container
 
-;; This does not work because the container does not contain the two
-;; delimiters.  I don't know how to make it work.
-; ("(" @delimiter
-;   .
-;   [ 
-;     (pattern)
-;     (union_pattern)
-;   ] @container
-;   .
-; ")" @delimiter @sentinel)
+(_
+"(" @delimiter
+  .
+  [(pattern) (union_pattern)]
+  .
+")" @delimiter @sentinel
+)  @container
 
 (record_expr
   "{" @delimiter
