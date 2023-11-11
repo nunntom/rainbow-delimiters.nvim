@@ -10,10 +10,13 @@
   "(" @delimiter
   ")" @delimiter @sentinel) @container
 
-(type_ref
+(_
   "(" @delimiter
+  .
   (type_expression)
-  ")" @delimiter @sentinel) @container
+  .
+  ")" @delimiter @sentinel
+) @container
 
 (_
 "(" @delimiter
