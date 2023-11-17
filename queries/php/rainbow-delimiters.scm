@@ -29,3 +29,8 @@
 (subscript_expression
     "[" @delimiter
     "]" @delimiter @sentinel) @container
+
+(foreach_statement
+  "(" @delimiter
+  ")" @delimiter @sentinel
+) @container
